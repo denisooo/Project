@@ -25,5 +25,10 @@ Taken:
 - contactpagina maken 
 - persoonlijke pagina(bestellingen/adresgegevens etc)
  
+optionele taken:
+- Populariteit rangorde catalogus
+- Betaalpagina 
+- Zoekfunctie
+- Kortingspunten, te verdienen bij aankopen
+- 
 
--betaalpagina 
