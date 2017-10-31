@@ -17,12 +17,13 @@ INSERT INTO adres (Straatnaam, Huisnummer, Toevoeging, Postcode, Plaats) VALUES
 ('Van Dusseldorpstraat', 172, NULL, '4461LV', 'Goes'),
 ('Doctor Colijnstraat', 114, 'A', '2982AC', 'Ridderkerk');
 
-INSERT INTO klant (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaam, Geboortedatum, Telefoon, Mobiel, Adres_id) VALUES
-('Blas1984@superrito.com', 'test123', 'Heer', 'Henk', NULL, 'Blas', '1990-12-15', '0524-135231', '06-39252532', 1),
-('Hans281@superrito.com', 'wachtwoordvergeten', 'Heer', 'Hans', 'De', 'Worst', NULL, NULL, NULL, 2),
-('Superburrito@superrito.com', 'geenidee', 'Mevrouw', 'Simone', NULL, 'Klein', '1994-09-13', NULL, NULL, 3),
-('test123@gmail.com', 'AbCdEfG', 'Heer', 'Michiel', NULL, 'Bruinsma', '1988-06-10', NULL, NULL, 4),
-('test123@outlook.com', '01823213', 'Mevrouw', 'Jannie', 'Van', 'Jas', '1966-06-06', NULL, '06-3829599', 5);
+INSERT INTO klant (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaam, Geboortedatum, Telefoon, Mobiel, Adres_id, Rechten) VALUES
+('Blas1984@superrito.com', 'test123', 'Heer', 'Henk', NULL, 'Blas', '1990-12-15', '0524-135231', '06-39252532', 1, 1),
+('Hans281@superrito.com', 'wachtwoordvergeten', 'Heer', 'Hans', 'De', 'Worst', NULL, NULL, NULL, 2, 1),
+('Superburrito@superrito.com', 'geenidee', 'Mevrouw', 'Simone', NULL, 'Klein', '1994-09-13', NULL, NULL, 3, 1),
+('test123@gmail.com', 'AbCdEfG', 'Heer', 'Michiel', NULL, 'Bruinsma', '1988-06-10', NULL, NULL, 4, 1),
+('test123@outlook.com', '01823213', 'Mevrouw', 'Jannie', 'Van', 'Jas', '1966-06-06', NULL, '06-3829599', 5, 1),
+('admin@outlook.com', 'Welkom01', 'Heer', 'Admin', NULL, 'Admin', '1999-01-01', NULL, NULL, 5, 1);
 
 INSERT INTO categorie (Categorie_naam) VALUES
 ('Dieren'),
