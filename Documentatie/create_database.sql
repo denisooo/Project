@@ -33,7 +33,7 @@ Geboortedatum date,
 Telefoon varchar(30),
 Mobiel varchar(30),
 Adres_id mediumint unsigned NOT NULL,
-Rechten varchar(1), DEFAULT '1', 
+Rechten varchar(1) DEFAULT '1', 
 PRIMARY KEY (Klant_id),
 FOREIGN KEY (Adres_id) REFERENCES Adres(Adres_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

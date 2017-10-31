@@ -23,7 +23,7 @@ INSERT INTO klant (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaa
 ('Superburrito@superrito.com', 'geenidee', 'Mevrouw', 'Simone', NULL, 'Klein', '1994-09-13', NULL, NULL, 3, 1),
 ('test123@gmail.com', 'AbCdEfG', 'Heer', 'Michiel', NULL, 'Bruinsma', '1988-06-10', NULL, NULL, 4, 1),
 ('test123@outlook.com', '01823213', 'Mevrouw', 'Jannie', 'Van', 'Jas', '1966-06-06', NULL, '06-3829599', 5, 1),
-('admin@outlook.com', 'Welkom01', 'Heer', 'Admin', NULL, 'Admin', '1999-01-01', NULL, NULL, 5, 1);
+('admin@outlook.com', 'Welkom01', 'Heer', 'Admin', NULL, 'Admin', '1999-01-01', NULL, NULL, 5, 2);
 
 INSERT INTO categorie (Categorie_naam) VALUES
 ('Dieren'),
