@@ -16,11 +16,14 @@ Pagina’s:
 -	Persoonlijke pagina (ordergegevens)
 
 Taken:
-* Algemeen:
--	Bootstrap
-- 
+- algemene lay out/ index opzetten
+- Inloggen/registreren/etc
+- producttoevoeg scherm
+- Productpagina maken
+- catalogus maken
+- Winkelwagen
+- contactpagina maken 
+- persoonlijke pagina(bestellingen/adresgegevens etc)
+ 
 
-*Index/Home
-
-*Inlog
-- 
+-betaalpagina 
