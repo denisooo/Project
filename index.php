@@ -71,11 +71,16 @@
 							<li><a href="#">Accountinfo</a></li>
 							<li><a href="#">Orderhistorie</a></li>
 						</ul
-						</ul>
 						<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
+							<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
+=======
 							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
 							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
 							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
+>>>>>>> 73cc7798bc864c045ca8d85908a308fb506ad682
 						</ul>
 					</div>
 
@@ -87,7 +92,7 @@
 							<li><a href="#">Klantenservice</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen</a></li>
 							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
 							<li><a href="login_form.php"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
 						</ul>
@@ -103,7 +108,19 @@
 				<p>Op deze website heeft u de kans om mooie tweedehandse sleutelhangers te bestellen.</p>
 				<p>Klik bij het menu op Aanbod om de producten te bekijken</p>
 				<p>Voordat u een sleutelhanger toevoegt aan uw winkelwagen, zal u hiervoor eerst moeten inloggen en/ of inloggen.</p>
+				<?php if($_SESSION['rechten'] =='') { ?>
+				<p>0</p>
+				<?php } ?>
+				<?php if($_SESSION['rechten'] =='1') { ?>
+				<p>1</p>
+				<?php } ?>
+				<?php if($_SESSION['rechten'] =='2') { ?>
+				<p>2</p>
+				<?php } ?>
+			
 			</div>
+			
+			
 		</div>
 
 	</div>
