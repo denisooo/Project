@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-   unset($_SESSION['username']);
+if(isset($_SESSION['Email'])){
+   unset($_SESSION['Email']);
 }
 
-if(isset($_SESSION['userpassword'])){
-   unset($_SESSION['userpassword']);
+if(isset($_SESSION['Wachtwoord'])){
+   unset($_SESSION['Wachtwoord']);
 }
 
 if(isset($_SESSION['rank'])){
@@ -16,7 +16,7 @@ if(isset($_SESSION['loggedin'])){
 	unset($_SESSION['loggedin']);
 }
 
-header('location: index.php');  
-  
-  
+header('location: index.php');
+
+
 ?>
