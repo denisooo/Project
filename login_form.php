@@ -27,7 +27,7 @@
 		<!-- Include Header en Navigatie/ menu -->
 		<?php include('header_menu.php'); ?>
 
-		<!-- Homepagina inhoud -->
+		<!-- Login_form inhoud -->
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="login_form">

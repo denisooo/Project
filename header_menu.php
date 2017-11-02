@@ -49,7 +49,7 @@
 					<li><a href="#">Orderhistorie</a></li>
 				</ul
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
+					<li><a href="winkelwagen.php"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
 					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
 				</ul>
@@ -63,7 +63,7 @@
 					<li><a href="#">Klantenservice</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen</a></li>
+					<li><a href="winkelwagen.php"><span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen</a></li>
 					<li><a href="register_form.php"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
 					<li><a href="login_form.php"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
 				</ul>
