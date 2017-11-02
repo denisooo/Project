@@ -5,8 +5,8 @@ Riasleutelhangers.nl
 
 Pagina’s:
 -	Index/Home
--	Inlog
--	Registratie
+-	Inlog  |   Dennis
+-	Registratie    |    Dennis
 -	Catalogus
 -	Winkelwagen
 -	Betaalpagina
@@ -17,7 +17,7 @@ Pagina’s:
 
 Taken:
 - algemene lay out/ index opzetten
-- Inloggen/registreren/etc
+- Inloggen/registreren/etc      |        Dennis
 - producttoevoeg scherm
 - Productpagina maken
 - catalogus maken
