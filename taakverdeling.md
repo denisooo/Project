@@ -13,7 +13,7 @@ Pagina’s:
 -	Contact
 -	10 x productpagina
 -	Admin pagina
--	Persoonlijke pagina (ordergegevens)
+-	Persoonlijke pagina (ordergegevens)  |  Ruben
 
 Taken:
 - algemene lay out/ index opzetten  |   Gertjan
@@ -23,7 +23,7 @@ Taken:
 - catalogus maken
 - Winkelwagen  |   Gertjan
 - contactpagina maken 
-- persoonlijke pagina(bestellingen/adresgegevens etc)
+- persoonlijke pagina(bestellingen/adresgegevens etc)  |  Ruben
  
 optionele taken:
 - Populariteit rangorde catalogus
