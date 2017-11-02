@@ -59,21 +59,21 @@ include ('sessions_error.php');
     				</div>
 
     			<!-- Klanten ingelogd menu -->
-    			<?php } elseif ($_SESSION['rechten'] =='1') { ?>
-    				<div class="collapse navbar-collapse" id="myNavbar">
-    					<ul class="nav navbar-nav">
-    						<li><a href="#">Aanbod</a></li>
-    						<li><a href="#">Klantenservice</a></li>
-    						<li><a href="#">Accountinfo</a></li>
-    						<li><a href="#">Orderhistorie</a></li>
-    					</ul
-    					</ul>
-    					<ul class="nav navbar-nav navbar-right">
-    						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
-    						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
-    						<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
-    					</ul>
-    				</div>
+				<?php } elseif ($_SESSION['rechten'] =='1') { ?>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Aanbod</a></li>
+							<li><a href="#">Klantenservice</a></li>
+							<li><a href="#">Accountinfo</a></li>
+							<li><a href="#">Orderhistorie</a></li>
+						</ul
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
+							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
+
+						</ul>
+					</div>
 
     			<!-- Niet ingelogd menu -->
     			<?php } else { ?>
@@ -84,7 +84,7 @@ include ('sessions_error.php');
     					</ul>
     					<ul class="nav navbar-nav navbar-right">
     						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
-    						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
+    						<li><a href="register_form.php"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
     						<li><a href="login_form.php"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
     					</ul>
     				</div>
@@ -144,7 +144,7 @@ include ('sessions_error.php');
   		$gebruikersnaam=$_POST['Email'];
   		$wachtwoord=$_POST['Wachtwoord'];
   		while($row = mysqli_fetch_row($result)){
-  			$rechten = $row[3];
+  			$rechten = $row[11];
   			$_SESSION['Email']=$gebruikersnaam;
   			$_SESSION['Wachtwoord']=$wachtwoord;
   			$_SESSION['rechten']=$rechten;

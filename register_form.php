@@ -1,6 +1,6 @@
 <?php
 	session_start();
-
+	error_reporting(E_ERROR);
 	include ('connect.php');
 	include ('sessions.php');
 	include ('sessions_error.php');
@@ -58,21 +58,21 @@
     				</div>
 
     			<!-- Klanten ingelogd menu -->
-    			<?php } elseif ($_SESSION['rechten'] =='1') { ?>
-    				<div class="collapse navbar-collapse" id="myNavbar">
-    					<ul class="nav navbar-nav">
-    						<li><a href="#">Aanbod</a></li>
-    						<li><a href="#">Klantenservice</a></li>
-    						<li><a href="#">Accountinfo</a></li>
-    						<li><a href="#">Orderhistorie</a></li>
-    					</ul
-    					</ul>
-    					<ul class="nav navbar-nav navbar-right">
-    						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
-    						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
-    						<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
-    					</ul>
-    				</div>
+				<?php } elseif ($_SESSION['rechten'] =='1') { ?>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Aanbod</a></li>
+							<li><a href="#">Klantenservice</a></li>
+							<li><a href="#">Accountinfo</a></li>
+							<li><a href="#">Orderhistorie</a></li>
+						</ul
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
+							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
+
+						</ul>
+					</div>
 
     			<!-- Niet ingelogd menu -->
     			<?php } else { ?>
@@ -83,7 +83,7 @@
     					</ul>
     					<ul class="nav navbar-nav navbar-right">
     						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
-    						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
+    						<li><a href="register_form.php"><span class="glyphicon glyphicon-user"></span> Registreren</a></li>
     						<li><a href="login_form.php"><span class="glyphicon glyphicon-log-in"></span> Inloggen</a></li>
     					</ul>
     				</div>
@@ -92,14 +92,14 @@
     	</div>
 <body>
 <div id="container">
-  <div class="form_register">
+  <div class="register_form">
     <h2>Registreren</h2>
     <?php
     if (!isset($_SESSION['loggedin'])) {
       ?>
       <table class="table">
         <tr>
-          <form method="post" action="form_register.php">
+          <form method="post" action="register_form.php">
             <td>Emailadres: </td>
           <td>
             <input type="text" name="Email" placeholder="Emailadres">
@@ -188,15 +188,15 @@ foreach($_POST as $key=>$value) {
 	}
 }
 /* Password Matching Validation */
-//if($_POST['Wachtwoord'] != $_POST['confirm_Wachtwoord']){
-//$error_message = 'Wachtwoorden komen niet overeen<br>';
-//}
+if($_POST['Wachtwoord'] != $_POST['confirm_Wachtwoord']){
+$error_message = 'Wachtwoorden komen niet overeen<br>';
+}
 
-//if(!isset($error_message)) {
-//	if (!filter_var($_POST["Email"], FILTER_VALIDATE_EMAIL)) {
-//	$error_message = "Invalid Email Address";
-//	}
-//}
+if(!isset($error_message)) {
+  if (!filter_var($_POST["Email"], FILTER_VALIDATE_EMAIL)) {
+	$error_message = "Invalid Email Address";
+	}
+}
   // If the values are posted, insert them into the database.
   if (isset($_POST['Email']) && isset($_POST['Wachtwoord'])){
       $email = $_POST['Email'];
@@ -211,19 +211,15 @@ foreach($_POST as $key=>$value) {
       $plaats = $_POST['Plaats'];
 
       $query = "INSERT INTO `klant` (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaam) VALUES ('$email', '$wachtwoord', '$aanhef', '$voornaam', '$tussenvoegsel', '$achternaam');
-                INSERT INTO 'adres' (Straatnaam, Huisnummer, Postcode, Plaats) VALUES ('$straatnaam', '$huisnummer', '$postcode', '$plaats')";
-      $result = mysqli_query($db, $query);
-      //if($result){
-      //    echo "Gebruiker aangemaakt";
-      //}else{
-      //    echo "Gebruiker Niet aangemaakt";
-      //}
+                INSERT INTO `adres` (Straatnaam, Huisnummer, Postcode, Plaats) VALUES ('$straatnaam', '$huisnummer', '$postcode', '$plaats')";
+      $result = mysqli_multi_query($db, $query);
+      if($result){
+          echo "Gebruiker aangemaakt";
+      }else{
+          echo "Gebruiker Niet aangemaakt";
+      }
   }
-  if (!$result) {
-    printf("Error: %s\n", mysqli_error($db));
-    exit();
-  }
-  ?>
+?>
 
 
 

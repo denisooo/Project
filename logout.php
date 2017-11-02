@@ -8,8 +8,8 @@ if(isset($_SESSION['Wachtwoord'])){
    unset($_SESSION['Wachtwoord']);
 }
 
-if(isset($_SESSION['rank'])){
-   $_SESSION['rank']='0';
+if(isset($_SESSION['rechten'])){
+   $_SESSION['rechten']='0';
 }
 
 if(isset($_SESSION['loggedin'])){
