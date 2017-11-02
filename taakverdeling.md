@@ -4,11 +4,11 @@ Project HanzeHogeschool 2017
 Riasleutelhangers.nl
 
 Pagina’s:
--	Index/Home
+-	Index/Home  |   Gertjan
 -	Inlog  |   Dennis
 -	Registratie    |    Dennis
 -	Catalogus
--	Winkelwagen
+-	Winkelwagen  |   Gertjan
 -	Betaalpagina
 -	Contact
 -	10 x productpagina
@@ -16,12 +16,12 @@ Pagina’s:
 -	Persoonlijke pagina (ordergegevens)
 
 Taken:
-- algemene lay out/ index opzetten
+- algemene lay out/ index opzetten  |   Gertjan
 - Inloggen/registreren/etc      |        Dennis
 - producttoevoeg scherm
 - Productpagina maken
 - catalogus maken
-- Winkelwagen
+- Winkelwagen  |   Gertjan
 - contactpagina maken 
 - persoonlijke pagina(bestellingen/adresgegevens etc)
  
