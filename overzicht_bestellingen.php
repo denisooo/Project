@@ -30,6 +30,7 @@ elseif($_SESSION['rechten'] =='0') {
 		if($num > 0){
 			while($row=mysqli_fetch_assoc($results)) {
 				?>
+				<div container="bestellingen">
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <div class="pull-left">
@@ -39,6 +40,7 @@ elseif($_SESSION['rechten'] =='0') {
       </div>
     </div>
   </div>
+</div>
 		<?php
 			}
 			?>
