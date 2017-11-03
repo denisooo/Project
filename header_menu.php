@@ -53,7 +53,7 @@
 				<?php if($_SESSION['rechten'] =='2') { ?>
 					<div class="collapse navbar-collapse" id="Navigatiemenu">
 						<ul class="nav navbar-nav">
-							<li><a href="#">Aanbod</a></li>
+							<li><a href="aanbod.php">Aanbod</a></li>
 							<li><a href="#">Sleutelhangers toevoegen</a></li>
 							<li><a href="#">Advertenties bewerken</a></li>
 							<li><a href="#">Advertenties verwijderen</a></li>
@@ -68,7 +68,7 @@
 				<?php } elseif ($_SESSION['rechten'] =='1') { ?>
 					<div class="collapse navbar-collapse" id="Navigatiemenu">
 						<ul class="nav navbar-nav">
-							<li><a href="#">Aanbod</a></li>
+							<li><a href="aanbod.php">Aanbod</a></li>
 							<li><a href="#">Klantenservice</a></li>
 							<li><a href="#">Accountinfo</a></li>
 							<li><a href="#">Orderhistorie</a></li>
@@ -84,7 +84,7 @@
 				<?php } else { ?>
 					<div class="collapse navbar-collapse" id="Navigatiemenu">
 						<ul class="nav navbar-nav">
-							<li><a href="#">Aanbod</a></li>
+							<li><a href="aanbod.php">Aanbod</a></li>
 							<li><a href="#">Klantenservice</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
