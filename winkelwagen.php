@@ -1,12 +1,17 @@
 <!-- Include file voor bootstrap, stylesheet etc. -->
 <?php include('header_menu.php'); ?>
-		
+<!-- Checkt of de gebruiker ingelogd is -->
+<?php
+if($_SESSION['rechten'] =='0') {
+    $_SESSION['errorlog']="U moet ingelogd zijn om uw winkelwagen te zien";
+    header('location: index.php');
+}	?>
 <!-- Winkelwagen pagina inhoud -->
 <div class="row">
 	<div class="col-sm-12">
 		<h1><span class="glyphicon glyphicon-shopping-cart"></span> Uw winkelwagen</h1>
 		<table id="winkelwagen" class="table table-hover table-condensed">
-			
+
 			<!-- Thead voor informatie bovenaan producten -->
 			<thead>
 				<tr>
@@ -14,22 +19,22 @@
 					<th style="width:25%">Prijs (excl. verzendkosten)</th>
 					<th style="width:10%">Aantal</th>
 					<th style="width 20%">Totaal</th>
-				</tr>	
+				</tr>
 			</thead>
-			
+
 			<!-- Tbody voor de producten in winkelwagen -->
 			<tbody>
 				<tr>
-						
+
 					<!-- Data onder kopje Product -->
 					<td>
 						<div class="row">
-							
+
 							<!-- Afbeelding product -->
 							<div class="col-sm-4 hidden-xs">
 								<img src="http://via.placeholder.com/150x150" alt="" class="img-responsive"/>
 							</div>
-							
+
 							<!-- Productbeschrijving -->
 							<div class="col-sm-8">
 								<h4>Productnaam</h4>
@@ -37,10 +42,10 @@
 							</div>
 						</div>
 					</td>
-					
+
 					<!-- Data onder kopje Prijs (excl. verzendkosten) -->
 					<td>€5.00</td>
-					
+
 					<!-- Data onder kopje Aantal -->
 					<td>
 						<input type="number" class="form-control" value="1">
@@ -48,7 +53,7 @@
 
 					<!-- Data onder kopje Totaal -->
 					<td>€5.00</td>
-					
+
 					<!-- Update en Verwijder -->
 					<td>
 						<button class="btn btn-success btn-sm">
@@ -59,18 +64,18 @@
 						</button>
 					</td>
 				</tr>
-				
+
 				<tr>
-				
+
 					<!-- Data onder kopje Product -->
 					<td>
 						<div class="row">
-							
+
 							<!-- Afbeelding product -->
 							<div class="col-sm-4 hidden-xs">
 								<img src="http://via.placeholder.com/150x150" alt="" class="img-responsive"/>
 							</div>
-							
+
 							<!-- Productbeschrijving -->
 							<div class="col-sm-8">
 								<h4>Productnaam</h4>
@@ -78,10 +83,10 @@
 							</div>
 						</div>
 					</td>
-					
+
 					<!-- Data onder kopje Prijs (excl. verzendkosten) -->
 					<td>€5.00</td>
-					
+
 					<!-- Data onder kopje Aantal -->
 					<td>
 						<input type="number" class="form-control" value="1">
@@ -89,7 +94,7 @@
 
 					<!-- Data onder kopje Totaal -->
 					<td>€5.00</td>
-					
+
 					<!-- Update en Verwijder -->
 					<td>
 						<button class="btn btn-success btn-sm">
@@ -100,18 +105,18 @@
 						</button>
 					</td>
 				</tr>
-				
+
 				<tr>
-				
+
 					<!-- Data onder kopje Product -->
 					<td>
 						<div class="row">
-							
+
 							<!-- Afbeelding product -->
 							<div class="col-sm-4 hidden-xs">
 								<img src="http://via.placeholder.com/150x150" alt="" class="img-responsive"/>
 							</div>
-							
+
 							<!-- Productbeschrijving -->
 							<div class="col-sm-8">
 								<h4>Productnaam</h4>
@@ -119,10 +124,10 @@
 							</div>
 						</div>
 					</td>
-					
+
 					<!-- Data onder kopje Prijs (excl. verzendkosten) -->
 					<td>€5.00</td>
-					
+
 					<!-- Data onder kopje Aantal -->
 					<td>
 						<input type="number" class="form-control" value="1">
@@ -130,7 +135,7 @@
 
 					<!-- Data onder kopje Totaal -->
 					<td>€5.00</td>
-					
+
 					<!-- Update en Verwijder -->
 					<td>
 						<button class="btn btn-success btn-sm">
@@ -142,7 +147,7 @@
 					</td>
 				</tr>
 			</tbody>
-			
+
 			<tfoot>
 				<tr>
 					<td>
@@ -160,7 +165,7 @@
 					</td>
 				</tr>
 			</tfoot>
-			
+
 		</table>
 	</div>
 </div>
