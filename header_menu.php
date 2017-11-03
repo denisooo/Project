@@ -46,7 +46,7 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="#">Home</a>
+					<a class="navbar-brand" href="index.php">Home</a>
 				</div>
 
 				<!-- Admin menu -->
