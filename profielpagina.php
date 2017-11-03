@@ -10,7 +10,7 @@
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="pull-left">
 									<a href="orderhistorie.php" class="btn btn-primary">Orderhistorie</a>
-									<a href="wachtwoordwijzig.php" class="btn btn-primary">Wachtwoord wijzigen</a>
+									<a href="pwedit.php" class="btn btn-primary">Wachtwoord wijzigen</a>
 								</div>
 							</div>
 						</div>
