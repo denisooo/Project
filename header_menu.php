@@ -7,18 +7,18 @@
 	include ('connect.php');
 	include ('sessions.php');
 	include ('sessions_error.php');
-?> 
+?>
 
 <head>
 	<title>Ria's Sleutelhangers</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<!-- Bootstrap  bestanden -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+
 	<!-- Stylesheet -->
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -57,7 +57,7 @@
 							<li><a href="#">Sleutelhangers toevoegen</a></li>
 							<li><a href="#">Advertenties bewerken</a></li>
 							<li><a href="#">Advertenties verwijderen</a></li>
-							<li><a href="#">Overzicht bestellingen</a></li>
+							<li><a href="overzicht_bestellingen.php">Overzicht bestellingen</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>

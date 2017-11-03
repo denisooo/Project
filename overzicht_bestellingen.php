@@ -13,7 +13,7 @@ elseif($_SESSION['rechten'] =='0') {
 } ?>
 <!-- Query voor bestelling id`s -->
     <?php
-    $query ="SELECT 'Bestelling_id' FROM bestelling WHERE 1 ";
+    $query ="SELECT Bestelling_id FROM bestelling ORDER BY Bestelling_id";
     $results=mysqli_query($db, $query);
     if($results){
     $num = mysqli_num_rows($results);
@@ -31,7 +31,7 @@ elseif($_SESSION['rechten'] =='0') {
 			while($row=mysqli_fetch_assoc($results)) {
 				?>
 				<tr>
-			<td><a href="summary.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn" value="<?php echo $row['Bestelling_id'];?>"></a></td>
+			<td><a href="Overzicht_Bestellingid.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn" value="<?php echo $row['Bestelling_id'];?>"></a></td>
 				</tr>
 		<?php
 			}
