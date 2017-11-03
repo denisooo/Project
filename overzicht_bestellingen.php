@@ -30,15 +30,21 @@ elseif($_SESSION['rechten'] =='0') {
 		if($num > 0){
 			while($row=mysqli_fetch_assoc($results)) {
 				?>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="pull-left">
 				<tr>
-			<td><a href="Overzicht_Bestellingid.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn" value="<?php echo $row['Bestelling_id'];?>"></a></td>
+			<td><a href="Overzicht_Bestellingid.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn btn-primary" value="<?php echo $row['Bestelling_id'];?>"></a></td>
 				</tr>
+      </div>
+    </div>
+  </div>
 		<?php
 			}
 			?>
 				<tr>
 					<td colspan='2'>
-						<a href="index.php"><input type="button" class="btn" value="Terug"></a>
+						<a href="index.php"><input type="button" class="btn btn-default" value="Terug"></a>
 					</td>
 				</tr>
 			<?php

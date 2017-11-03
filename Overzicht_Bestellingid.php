@@ -25,7 +25,7 @@ else {
   </tr>
    <?php
   $bestelling_id= 5;
-  $query ="SELECT B.Bestelling_id as bestelling_id, K.Email as Email, K.Voornaam as voornaam, K.Achternaam as achternaam, P.Naam_Product as naam_product, P.Beschrijving as beschrijving FROM Bestelling B JOIN Klant K ON B.Klant_id = K.Klant_id JOIN bestellingproduct bp ON b.Bestelling_id = bp.Bestelling_id JOIN Product P ON Bp.Product_id = P.Product_id WHERE bestelling_id='$Bestelling_id' ";
+  $query ="SELECT B.Bestelling_id as bestelling_id, B.Tijd_Bestelling as datum K.Email as Email, K.Voornaam as voornaam, K.Achternaam as achternaam, P.Naam_Product as naam_product, P.Beschrijving as beschrijving FROM Bestelling B JOIN Klant K ON B.Klant_id = K.Klant_id JOIN bestellingproduct bp ON b.Bestelling_id = bp.Bestelling_id JOIN Product P ON Bp.Product_id = P.Product_id WHERE bestelling_id='$Bestelling_id' ";
   echo "$query";
   $results=mysqli_query($db, $query);
   $bestellingen=mysqli_fetch_assoc($results);
@@ -56,6 +56,10 @@ else {
   <td><strong>Beschrijving:</strong></td>
   <td><?php echo ($bestellingen['beschrijving']) ?> </td>
   </tr>
+  <tr>
+  <td><strong>Besteldatum & tijd</strong></td>
+  <td><?php echo ($bestellingen['datum']) ?> </td>
+</tr>
   </div></div>
   <tr>
     <td colspan="2"><hr /></td>
@@ -63,7 +67,7 @@ else {
 
 				<tr>
 					<td colspan='2'>
-						<a href="overzicht_bestellingen.php"><input type="button" class="btn" value="Terug"></a>
+						<a href="overzicht_bestellingen.php"><input type="button" class="btn btn-default" value="Terug"></a>
 					</td>
 				</tr>
 

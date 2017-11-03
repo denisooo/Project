@@ -1,6 +1,6 @@
 <!-- Include file voor bootstrap, stylesheet etc. -->
 <?php include('header_menu.php'); ?>
-		
+
 <!-- Login pagina inhoud -->
 <div class="row">
 	<div class="col-sm-12">
@@ -10,9 +10,6 @@
 		?>
 
 		<table class="table">
-			<tr>
-				<th colspan='2'>Login</th>
-			</tr>
 			<tr>
 				<form method="post" action="login_form.php">
 					<td>Emailadres: </td>
@@ -41,10 +38,10 @@
 		<?php
 			}
 		?>
-							
+
 	</div>
 </div>
-	
+
 <?php
 	if(!empty($_POST)){
 		$query="SELECT * FROM Klant WHERE `Email`='".$_POST['Email']."' AND wachtwoord='".$_POST['Wachtwoord']."'";
