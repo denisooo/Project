@@ -1,12 +1,16 @@
 <!-- Include file voor bootstrap, stylesheet etc. -->
 <?php include('header_menu.php'); ?>
+
+<!-- Winkelwagen pagina inhoud -->
+
 <!-- Checkt of de gebruiker ingelogd is -->
 <?php
-if($_SESSION['rechten'] =='0') {
-    $_SESSION['errorlog']="U moet ingelogd zijn om uw winkelwagen te zien";
-    header('location: index.php');
-}	?>
-<!-- Winkelwagen pagina inhoud -->
+	if($_SESSION['rechten'] =='0') {
+		$_SESSION['errorlog']="U moet ingelogd zijn om uw winkelwagen te zien";
+		header('location: index.php');
+	}	
+?>
+
 <div class="row">
 	<div class="col-sm-12">
 		<h1><span class="glyphicon glyphicon-shopping-cart"></span> Uw winkelwagen</h1>
@@ -171,6 +175,5 @@ if($_SESSION['rechten'] =='0') {
 </div>
 <!-- Einde winkelwagen pagina inhoud -->
 
-<!-- Container en body afsluiten -->
-</div>
-</body>
+<!-- Include file voor footer -->
+<?php include('footer.php'); ?>
