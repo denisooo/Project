@@ -12,6 +12,5 @@
 </div>
 <!-- Einde homepagina inhoud -->
 
-<!-- Container en body afsluiten -->
-</div>
-</body>
+<!-- Include file voor footer -->
+<?php include('footer.php'); ?>

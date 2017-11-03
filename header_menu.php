@@ -72,7 +72,7 @@
 							<li><a href="#">Klantenservice</a></li>
 							<li><a href="#">Accountinfo</a></li>
 							<li><a href="#">Orderhistorie</a></li>
-						</ul
+						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="winkelwagen.php"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
 							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>

@@ -9,6 +9,12 @@
 	margin-bottom: 0;
 }
 
+/* Footer lay-out */
+footer {
+    background: gray;
+    padding: 10px;
+}
+
 #home {
 	background-color: #d3d3d3;
 }
