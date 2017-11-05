@@ -11,7 +11,7 @@ else {
 ?>
 <table id="summary">
   <tr>
-    <td colspan="3"><h1>Overzicht Bestellingen</h1></td>
+    <td colspan="3"><h1>Bestelling Overzicht</h1></td>
   </tr>
   <tr>
     <td colspan="4"> </td>
