@@ -31,7 +31,7 @@ elseif($_SESSION['rechten'] =='0') {
     				?>
     				<tr>
     			<td><?php echo $row['naam_product']; ?></td>
-					<td><a href="Advertenties_bewerken.php?Product_id=<?php echo $row['Product_id'];?>"><input type="button" class="btn" align ="center" value="Bewerken"></a></td>
+					<td><a href="Advertenties_bewerken.php?Product_id=<?php echo $row['Product_id'];?>"><input type="button" class="btn btn-warning" align ="center" value="Bewerken"></a></td>
 					<td><a href="Advertenties_verwijderen.php?Product_id=<?php echo $row['Product_id'];?>"><input type="button" class="btn btn-danger" align ="center" value="Verwijderen" onclick="return confirm('Weet u het zeker dat u Advertentie <?php echo $row['naam_product'];?> wilt verwijderen?')"></a></td>
     				</tr>
           </div>

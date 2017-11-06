@@ -58,14 +58,6 @@ elseif($_SESSION['rechten'] =='0') {
   <td><strong>Vraagprijs:</strong></td>
   <td><input type="text" name="Vraagprijs" value="<?php echo ($advertenties['Vraagprijs'])?>"></td>
   </tr>
-  <tr>
-</tr>
-  </div></div>
-</form>
-</table>
-  <tr>
-    <td colspan="2"><hr /></td>
-  </tr>
 
 				<tr>
 					<td colspan='2'>
@@ -73,6 +65,8 @@ elseif($_SESSION['rechten'] =='0') {
 						<input type='submit' class="btn btn-primary" value="Bewerken">
 					</td>
 				</tr>
+			</form>
+			</table>
 <?php
 // If the values are posted, insert them into the database.
 if (isset($_POST['Product_id'])){
@@ -90,7 +84,7 @@ if (isset($_POST['Product_id'])){
 	if($result){
 		echo "Advertentie aangepast";
 	}else{
-		echo "Advertentie niet aangepast";
+		echo "Advertentie niet aangepast" .mysqli_error($db);
 	}
 }
 ?>
