@@ -42,7 +42,7 @@
 					echo $row['Categorie_naam'];
 					echo $row['Gewicht'];
 					echo $row['Vraagprijs'];?>
-				</td><p>If</p>
+				</td>
 		<?php
 	}
 }
@@ -56,7 +56,7 @@
 					echo $row['Categorie_naam'];
 					echo $row['Gewicht'];
 					echo $row['Vraagprijs'];?>
-				</td><p>Elseif1</p>
+				</td>
 		<?php
 	}
 }
@@ -70,7 +70,7 @@
 					echo $row['Categorie_naam'];
 					echo $row['Gewicht'];
 					echo $row['Vraagprijs'];?>
-				</td><p>Elseif2</p>
+				</td>
 		<?php
 	}
 }
@@ -84,7 +84,7 @@
 					echo $row['Categorie_naam'];
 					echo $row['Gewicht'];
 					echo $row['Vraagprijs'];?>
-				</td><p>Elseif3</p>
+				</td>
 		<?php
 	}
 }
@@ -98,7 +98,7 @@
 					echo $row['Categorie_naam'];
 					echo $row['Gewicht'];
 					echo $row['Vraagprijs'];?>
-				</td><p>Elseif4</p>
+				</td>
 		<?php
 	}
 }
@@ -113,7 +113,7 @@
 						echo $row['Categorie_naam'];
 						echo $row['Gewicht'];
 						echo $row['Vraagprijs'];?>
-					</td><p>Else</p>
+					</td>
 			<?php
 		}
 }
