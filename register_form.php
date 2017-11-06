@@ -1,15 +1,15 @@
 <!-- Include file voor bootstrap, stylesheet etc. -->
 <?php include('header_menu.php'); ?>
-		
+
 <!-- Registratie pagina inhoud -->
 <div class="row">
 	<div class="col-sm-12">
 		<h2>Registreren</h2>
-		
+
 		<?php
 			if (!isset($_SESSION['loggedin'])) {
 		?>
-		
+
 		<table class="table">
 			<tr>
 				<form method="post" action="register_form.php">
@@ -100,7 +100,7 @@
 					break;
 				}
 			}
-		
+
 			/* Password Matching Validation */
 			if($_POST['Wachtwoord'] != $_POST['confirm_Wachtwoord']){
 				$error_message = 'Wachtwoorden komen niet overeen<br>';
@@ -111,7 +111,7 @@
 					$error_message = "Invalid Email Address";
 				}
 			}
-		  
+
 			// If the values are posted, insert them into the database.
 			if (isset($_POST['Email']) && isset($_POST['Wachtwoord'])){
 				$email = $_POST['Email'];
@@ -125,8 +125,8 @@
 				$huisnummer = $_POST['Huisnummer'];
 				$plaats = $_POST['Plaats'];
 
-				$query = "INSERT INTO `klant` (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaam) VALUES ('$email', '$wachtwoord', '$aanhef', '$voornaam', '$tussenvoegsel', '$achternaam');
-						INSERT INTO `adres` (Straatnaam, Huisnummer, Postcode, Plaats) VALUES ('$straatnaam', '$huisnummer', '$postcode', '$plaats')";
+				$query = "INSERT INTO `adres` (Straatnaam, Huisnummer, Postcode, Plaats) VALUES ('$straatnaam', '$huisnummer', '$postcode', '$plaats');
+				INSERT INTO `klant` (Email, Wachtwoord, Aanhef, Voornaam, Tussenvoegsel, Achternaam, Adres_id) VALUES ('$email', '$wachtwoord', '$aanhef', '$voornaam', '$tussenvoegsel', '$achternaam', LAST_INSERT_ID() )";
 				$result = mysqli_multi_query($db, $query);
 				if($result){
 					echo "Gebruiker aangemaakt";
