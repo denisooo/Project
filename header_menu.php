@@ -69,12 +69,12 @@
 						<ul class="nav navbar-nav">
 							<li><a href="aanbod.php">Aanbod</a></li>
 							<li><a href="contact.php">Klantenservice</a></li>
-							<li><a href="#">Accountinfo</a></li>
-							<li><a href="#">Orderhistorie</a></li>
+							<li><a href="profielpagina.php">Accountinfo</a></li>
+							<li><a href="orderhistorie.php">Orderhistorie</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="winkelwagen.php"><span class="glyphicon glyphicon-user"></span> Winkelwagen</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
+							<li><a href="profielpagina.php"><span class="glyphicon glyphicon-log-in"></span> Profiel</a></li>
 							<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Uitloggen</a></li>
 						</ul>
 					</div>
