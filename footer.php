@@ -6,7 +6,7 @@
 			<p class="text-center">
 				<a href="#">Algemene Voorwaarden</a>  |
 				<a href="#">Privacy</a>  |
-				<a href="#">Contact</a>
+				<a href="contact.php">Contact</a>
 			</p>
 		</p>
 	</div>

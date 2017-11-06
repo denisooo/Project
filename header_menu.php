@@ -68,7 +68,7 @@
 					<div class="collapse navbar-collapse" id="Navigatiemenu">
 						<ul class="nav navbar-nav">
 							<li><a href="aanbod.php">Aanbod</a></li>
-							<li><a href="#">Klantenservice</a></li>
+							<li><a href="contact.php">Klantenservice</a></li>
 							<li><a href="#">Accountinfo</a></li>
 							<li><a href="#">Orderhistorie</a></li>
 						</ul>
@@ -84,7 +84,7 @@
 					<div class="collapse navbar-collapse" id="Navigatiemenu">
 						<ul class="nav navbar-nav">
 							<li><a href="aanbod.php">Aanbod</a></li>
-							<li><a href="#">Klantenservice</a></li>
+							<li><a href="contact.php">Klantenservice</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="winkelwagen.php"><span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen</a></li>
