@@ -2,7 +2,7 @@
 <footer class="form-group row">
 	<div class="col-sm-12">
 		<p class="text-center">
-			© Ria's Sleutelhangers 2017
+			© Ria's Sleutelhangers <?php echo date("Y"); ?>
 			<p class="text-center">
 				<a href="#">Algemene Voorwaarden</a>  |
 				<a href="#">Privacy</a>  |
