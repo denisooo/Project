@@ -35,7 +35,8 @@ elseif($_SESSION['rechten'] =='0') {
           <div class="col-sm-offset-2 col-sm-10">
             <div class="pull-left">
 				<tr>
-			<td><a href="Overzicht_Bestellingid.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn btn-primary" value="<?php echo $row['Bestelling_id'];?>"></a></td>
+			<td><?php echo $row['Bestelling_id']; ?></td>
+			<td><a href="Overzicht_Bestellingid.php?Bestelling_id=<?php echo $row['Bestelling_id'];?>"><input type="button" class="btn btn-info" value="Bekijken"></a></td>
 				</tr>
       </div>
     </div>

@@ -56,7 +56,6 @@
 							<li><a href="aanbod.php">Aanbod</a></li>
 							<li><a href="#">Sleutelhangers toevoegen</a></li>
 							<li><a href="Overzicht_advertenties.php">Advertenties bewerken</a></li>
-							<li><a href="#">Advertenties verwijderen</a></li>
 							<li><a href="overzicht_bestellingen.php">Overzicht bestellingen</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

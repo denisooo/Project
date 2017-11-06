@@ -25,7 +25,7 @@ elseif($_SESSION['rechten'] =='0') {
     <td></td>
   </tr>
    <?php
-  $query ="SELECT Product_id, naam_product, Categorie_naam, Beschrijving, Gewicht, Vraagprijs FROM product p JOIN categorie c ON p.Categorie_id = c.Categorie_id WHERE p.Product_id='".$_GET['Bestelling_id']."' ";
+  $query ="SELECT Product_id, naam_product, Categorie_naam, Beschrijving, Gewicht, Vraagprijs FROM product p JOIN categorie c ON p.Categorie_id = c.Categorie_id WHERE p.Product_id='".$_GET['Product_id']."' ";
   $results=mysqli_query($db, $query);
   $advertenties=mysqli_fetch_assoc($results);
   ?>
@@ -85,7 +85,7 @@ if (isset($_POST['Product_id'])){
 
 
 	$query = "INSERT INTO `product` (Naam_product, Beschrijving, Gewicht, Vraagprijs) VALUES ($naam_product', '$Beschrijving', '$Gewicht', '$Vraagprijs') WHERE Product_id = $Product_id;
-			INSERT INTO `categorie` (Straatnaam, Huisnummer, Postcode, Plaats) VALUES ('$straatnaam', '$huisnummer', '$postcode', '$plaats')";
+			INSERT INTO `categorie` (Categorie_naam) VALUES ('$Categorie_naam')";
 	$result = mysqli_multi_query($db, $query);
 	if($result){
 		echo "Advertentie aangepast";
