@@ -36,7 +36,7 @@ elseif($_SESSION['rechten'] =='0') {
 			<form method="post" action="Advertenties_bewerken.php">
    <tr>
     <td><strong>Productid:</strong></td>
-    <td><input type="text" name="Product_ID" value="<?php echo ($advertenties['Product_id'])?>"></td>
+    <td><input type="text" name="Product_id" value="<?php echo ($advertenties['Product_id'])?>"></td>
   </tr>
   <tr>
     <td><strong>Naam Product:</strong></td>
@@ -44,7 +44,7 @@ elseif($_SESSION['rechten'] =='0') {
   </tr>
   <tr>
 	<td><strong>Categorie:</strong></td>
-	<td><input type="text" name="Categorie_naam" value="<?php echo ($advertenties['Categorie_naam'])?>"></td>
+	<td><input type="text" name="Categorie_naam" readonly value="<?php echo ($advertenties['Categorie_naam'])?>"></td>
   </tr>
   <tr>
   <td><strong>Beschrijving:</strong></td>
@@ -78,9 +78,8 @@ if (isset($_POST['Product_id'])){
 	$Vraagprijs = $_POST['Vraagprijs'];
 
 
-	$query = "INSERT INTO `product` (Naam_product, Beschrijving, Gewicht, Vraagprijs) VALUES ($naam_product', '$Beschrijving', '$Gewicht', '$Vraagprijs') WHERE Product_id = $Product_id;
-			INSERT INTO `categorie` (Categorie_naam) VALUES ('$Categorie_naam')";
-	$result = mysqli_multi_query($db, $query);
+	$query = "UPDATE product SET Naam_product='$naam_product', Beschrijving='$Beschrijving', Gewicht='$Gewicht', Vraagprijs='$Vraagprijs' WHERE Product_id = $Product_id";
+	$result = mysqli_query($db, $query);
 	if($result){
 		echo "Advertentie aangepast";
 	}else{

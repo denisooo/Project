@@ -10,118 +10,142 @@
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="pull-left">
 									<a href="orderhistorie.php" class="btn btn-primary">Orderhistorie</a>
+									<a href="infoedit.php" class="btn btn-primary">Gegevens Wijzigen</a>
 									<a href="pwedit.php" class="btn btn-primary">Wachtwoord wijzigen</a>
 								</div>
 							</div>
 						</div>
 						
+						<?php
+						$query = "SELECT * FROM klant WHERE Email = '".$_SESSION['Email']."'";
+						$result=mysqli_query($db, $query) or die(mysqli_error($db));
+
+						while($gegevens = mysqli_fetch_assoc($result)) {
+							$Voornaam = $gegevens['Voornaam'];
+							$Achternaam = $gegevens['Achternaam'];
+							$Tussenvoegsel = $gegevens['Tussenvoegsel'];
+							$Geboortedatum = $gegevens['Geboortedatum'];
+							$Postcode = $gegevens['Telefoon'] ;
+							$Mobiel = $gegevens['Mobiel'];
+							$Aanhef = $gegevens['Aanhef'];
+							$Email = $gegevens['Email'];
+							$Adres = $gegevens['Adres_id'];
+							$KlantID = $gegevens['Klant_id'];
+								}
+						?>
 						
 						<legend>Persoonsgegevens</legend>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Voornaam</label>
+							<label class="col-sm-2" >Voornaam</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Voornaam" class="form-control">
+								<p> <?php echo ($Voornaam)?> </p>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Achternaam</label>
+							<label class="col-sm-2" >Achternaam</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Achternaam" class="form-control">
+								<p> <?php echo ($Achternaam)?> </p>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Tussenvoegsel</label>
+							<label class="col-sm-2" >Tussenvoegsel</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Tussenvoegsel" class="form-control">
+								<p> <?php echo ($Tussenvoegsel)?> </p>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2" >Aanhef</label>
+							<div class="col-sm-10">
+								<p> <?php echo ($Aanhef)?> </p>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2" >Email</label>
+							<div class="col-sm-10">
+								<p> <?php echo ($Email)?> </p>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Aanhef</label>
+							<label class="col-sm-2" >Klantnummer</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Aanhef" class="form-control">
+								<p> <?php echo ($KlantID)?> </p>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2" >Geboortedatum</label>
+							<div class="col-sm-10">
+								<p> <?php echo ($Geboortedatum)?> </p>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Geboortedatum</label>
+							<label class="col-sm-2" >Telefoon</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Geboortedatum" class="form-control">
+								<p> <?php echo ($Telefoon)?> </p>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Telefoon</label>
+							<label class="col-sm-2" >Mobiel</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Telefoon" class="form-control">
+								<p> <?php echo ($Mobiel)?> </p>
 							</div>
 						</div>
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Mobiel</label>
-							<div class="col-sm-10">
-								<input type="text" placeholder="Mobiel" class="form-control">
-							</div>
-						</div>
+						  
+						<?php
+						$query = "SELECT * FROM adres WHERE Adres_id = '$Adres'";
+						$result=mysqli_query($db, $query) or die(mysqli_error($db));
+						
+						while($adresgegevens = mysqli_fetch_assoc($result)) {
+							$Straatnaam = $adresgegevens['Straatnaam'];
+							$Huisnummer = $adresgegevens['Huisnummer'];
+							$Toevoeging = $adresgegevens['Toevoeging'];
+							$Postcode = $adresgegevens['Postcode'];
+							$Plaats = $adresgegevens['Plaats'] ;
+								}
+						?> 
+						  
+						  
 						  
 						<legend>Adresgegevens</legend>
 						  
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Plaats</label>
+							<label class="col-sm-2" >Plaats</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Plaats" class="form-control">
+								<p> <?php echo ($Plaats)?> </p>
 							</div>
 						</div>
 						  
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Straatnaam</label>
+							<label class="col-sm-2" >Straatnaam</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Straatnaam" class="form-control">
+								<p> <?php echo ($Straatnaam)?> </p>
 							</div>
 						</div>
 						  
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Huisnummer</label>
+							<label class="col-sm-2" >Huisnummer</label>
 							<div class="col-sm-4">
-								<input type="text" placeholder="Huisnummer" class="form-control">
+								<p> <?php echo ($Huisnummer)?> </p>
 							</div>
 
-							<label class="col-sm-2 control-label" for="textinput">Toevoeging</label>
+							<label class="col-sm-2" >Toevoeging</label>
 							<div class="col-sm-4">
-								<input type="text" placeholder="Toevoeging" class="form-control">
+								<p> <?php echo ($Toevoeging)?> </p>
 							</div>
 						</div>
-						  
+						    	  
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Huisnummer</label>
+							<label class="col-sm-2" >Postcode</label>
 							<div class="col-sm-10">
-								<input type="text" placeholder="Huisnummer" class="form-control">
-							</div>
-						</div>
-						  
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Toevoeging</label>
-							<div class="col-sm-10">
-								<input type="text" placeholder="Toevoeging" class="form-control">
-							</div>
-						</div>
-						  
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="textinput">Postcode</label>
-							<div class="col-sm-10">
-								<input type="text" placeholder="Postcode" class="form-control">
-							</div>
-						</div>
-						  
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<div class="pull-right">
-									<button type="submit" class="btn btn-default">Annuleren</button>
-									<button type="submit" class="btn btn-primary">Opslaan</button>
-								</div>
+								<p> <?php echo ($Postcode)?> </p>
 							</div>
 						</div>
 				  		 
@@ -131,16 +155,9 @@
 		</div>
 		
 	</div>
-	<!-- Footer inhoud -->
-	<footer class="row">
-		<div class="col-sm-12">
-			<p>Footer tekst.....</p>
-		</div>
-	</footer>
-	<!-- Einde footer inhoud -->
 
-	<!-- Container en body afsluiten -->
-	</div>
-</body>
+
+	
+<?php include('footer.php'); ?>
 
 	
