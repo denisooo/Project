@@ -32,3 +32,6 @@ if (mysqli_query($db, $query)) {
      <a href="Overzicht_advertenties.php"><input type="button" class="btn btn-default" value="Terug"></a>
    </td>
  </tr>
+
+ <!-- Include file voor footer -->
+ <?php include('footer.php'); ?>

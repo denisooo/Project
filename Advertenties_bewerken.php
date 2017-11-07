@@ -91,3 +91,5 @@ if (isset($_POST['Product_id'])){
 
   </table>
 </body>
+<!-- Include file voor footer -->
+<?php include('footer.php'); ?>
