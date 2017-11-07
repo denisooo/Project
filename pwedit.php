@@ -14,17 +14,17 @@ $ww=mysqli_fetch_assoc($results);
 <form method="post" action="pwedit.php">
 	<div class="form-group">
 		<label for="pwd">Vul hier je oude wachtwoord in:</label>
-		<input type="password" class="form-control" id="wwoud">
+		<input type="password" class="form-control" name="wwoud">
 	</div>
 
 	<div class="form-group">
 		<label for="pwd">Vul hier je nieuwe wachtwoord in:</label>
-		<input type="password" class="form-control" id="wwnieuw">
+		<input type="password" class="form-control" name="wwnieuw">
 	</div>
 
 	<div class="form-group">
 		<label for="pwd">Bevestig je nieuwe wachtwoord</label>
-		<input type="password" class="form-control" id="wwnieuw2">
+		<input type="password" class="form-control" name="wwnieuw2">
 	</div>
 
 	<div class="form-group">
@@ -55,12 +55,13 @@ $ww=mysqli_fetch_assoc($results);
     }
     /* Set new password in database */
     if (isset($_POST['wwoud']) && isset($_POST['wwnieuw'])){
-      $query = "UPDATE klant SET Wachtwoord=".$_POST['wwnieuw']." WHERE Email = '".$_SESSION['Email']."' ";
+      $wwnieuw = $_POST['wwnieuw'];
+      $query = "UPDATE klant SET Wachtwoord='$wwnieuw' WHERE Email = '".$_SESSION['Email']."' ";
       $result = mysqli_query($db, $query);
       if($result){
         echo "Wachtwoord gewijzigd";
       }else{
-        echo "Wachtwoord Niet gewijzigd";
+        echo "Wachtwoord Niet gewijzigd". mysqli_error($db);
       }
     }
   ?>
