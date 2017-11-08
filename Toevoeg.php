@@ -9,7 +9,6 @@ $result1 = mysqli_query($db, $query1);
 
 ?>
 
-<!--> Begin formulier <!-->
 <h1>Product toevoegen</h1>
 
 <form method="POST" action="toevoeg.php" enctype="multipart/form-data">
