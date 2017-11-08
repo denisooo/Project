@@ -15,13 +15,16 @@
 	<div class="col-sm-12">
 		<h1><span class="glyphicon glyphicon-shopping-cart"></span> Uw winkelwagen</h1>
 		
+		<!-- Bij een lege winkelwagen geen winkelwagen laten zien, maar een melding -->
 		<?php if(empty($_SESSION['winkelwagen']))
 			{ ?>
 				<p>Er zijn nog geen producten in uw winkelwagen.</p>
 			<?php }
-			
+		
+		// Anders producten laten zien in een overzicht
 		else { ?>
-			
+		
+		<!-- Bootstrap tabel -->
 		<table id="winkelwagen" class="table table-hover table-condensed">
 
 			<!-- Thead voor informatie bovenaan producten -->
@@ -37,10 +40,12 @@
 			<!-- Tbody voor de producten in winkelwagen -->
 			<tbody>
 
+				<!-- De verschillende producten met explode function uit de sessie halen -->
 				<?php $wagen = explode('|', $_SESSION['winkelwagen']); 
 				
 				$i = 0;
 				
+				// foreach loop, die over alle producten in de sessie loopt 
 				foreach($wagen as $producten) {
 					$product = explode(',', $producten);
 					$query = mysqli_query($db, "SELECT * FROM product WHERE Product_id = '$product[0]'");
@@ -82,7 +87,7 @@
 							$sum+= $totaal;
 						?></td>
 
-						<!-- Update en Verwijder -->
+						<!-- Update en Verwijder (werkt niet momenteel -->
 						<td>
 							<button class="btn btn-success btn-sm">
 								<span class="glyphicon glyphicon-refresh"></span>
@@ -96,6 +101,7 @@
 					
 				</tbody>
 
+			<!-- footer van de tabel --> 
 			<tfoot>
 				<tr>
 					<td>
@@ -106,6 +112,7 @@
 					</td>
 					<td colspan="3" align="right"><strong>Totaal (excl. verzendkosten): <?php echo "€ " . number_format((float)$sum, 2, '.', '');?></strong></td>
 					<td>
+						<!-- Bestelling afronden knop -->
 						<a href="bestellingafronden.php" class="btn btn-success">
 							<span class="glyphicon glyphicon-arrow-right"></span>
 							Bestelling afronden

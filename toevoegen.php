@@ -2,6 +2,7 @@
 
 session_start();
 
+// haalt product_id en aantal op uit aanbod.php
 $product_id = $_POST['prod_id'];
 $aantal = $_POST['aantal_prod'];
 
@@ -12,8 +13,8 @@ if(empty($_SESSION['winkelwagen'])) {
 
 // Als de sessie al wel bestaat (al wel producten in winkelwagen)
 else {
+	// De verschillende producten met explode function uit de sessie halen
 	$wagen = explode('|', $_SESSION['winkelwagen']);
-	$count = count($wagen);
 	$toevoegen = TRUE;
 	
 	foreach($wagen as $producten) {
@@ -26,10 +27,12 @@ else {
 		}
 		
 		$i++;
+		// Als er een product in de sessie zit, dit productaantal verhogen
 		if($i == 1) {
 			$_SESSION['winkelwagen'] = $product[0].','.$product[1];
         }
 		
+		// Als er meerdere producten in de sessie zit, ook toevoegen, maar op deze manier
 		else {
 			$_SESSION['winkelwagen'] = $_SESSION['winkelwagen'].'|'.$product[0].','.$product[1];
 		}
