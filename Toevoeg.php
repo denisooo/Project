@@ -1,6 +1,7 @@
 <?php 
 // header gegevens importeren
 include('header_menu.php'); 
+include('footer.php');
 
 // query defineren voor het kunnen kiezen van categorien uit het formulier
 $query1 = "SELECT * FROM categorie";
