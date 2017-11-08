@@ -16,6 +16,12 @@ if(isset($_SESSION['loggedin'])){
 	unset($_SESSION['loggedin']);
 }
 
+if(isset($_SESSION['winkelwagen'])){
+	unset($_SESSION['winkelwagen']);
+}
+
+unset($GLOBALS['$producten_array']);
+
 header('location: index.php');
 
 

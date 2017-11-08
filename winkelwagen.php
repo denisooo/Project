@@ -14,6 +14,37 @@
 <div class="row">
 	<div class="col-sm-12">
 		<h1><span class="glyphicon glyphicon-shopping-cart"></span> Uw winkelwagen</h1>
+		
+		
+		<?php echo "test" . '<pre>'; print_r($producten_array); echo '</pre>';?>
+		<?php print_r($_SESSION['winkelwagen']);?>
+		
+		<?php if(isset($_POST["toevoegen_winkelwagen"])) {  
+			
+			/* Als er al producten zijn in winkelwagen */
+			if(isset($_SESSION["winkelwagen"])) {
+				$count = count($_SESSION["winkelwagen"]);  
+				echo $count;
+                $producten_array = array(  
+                     'product_id'               =>     $_GET["id"],  
+                 );  
+                
+				$_SESSION["winkelwagen"][$count] = $producten_array;  
+				print_r($_SESSION['winkelwagen']);
+			}
+			
+			/* Als er nog geen producten zijn in winkelwagen */
+			else {
+				$producten_array = array(
+					'product_id' => $_GET["id"]);
+				$_SESSION["winkelwagen"][0] = $producten_array;
+				echo '<pre>'; print_r($producten_array); echo '</pre>';
+				print_r($_SESSION['winkelwagen']);
+			}
+			
+		}
+		?>
+
 		<table id="winkelwagen" class="table table-hover table-condensed">
 
 			<!-- Thead voor informatie bovenaan producten -->
@@ -162,7 +193,7 @@
 					</td>
 					<td colspan="3" align="right"><strong>Totaal (excl. verzendkosten)</strong></td>
 					<td>
-						<a href="#" class="btn btn-success">
+						<a href="bestellingafronden.php" class="btn btn-success">
 							<span class="glyphicon glyphicon-arrow-right"></span>
 							Bestelling afronden
 						</a>

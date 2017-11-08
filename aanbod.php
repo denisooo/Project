@@ -30,8 +30,10 @@
 			?>
 		</ul>
 	</div>
+	
 	<!-- Catalogus -->
 	<div class="col-sm-9">
+	<?php $GLOBALS['producten_array'] = array() ?>
 		<?php
 			if ($_GET['Categorie_naam'] = "Dieren"){
 				$results2 = mysqli_query($db, $query2);
@@ -45,9 +47,11 @@
 									<div class="caption">
 										<strong><?php echo $row['Naam_product']?></strong><br>												
 										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										<a href="#" class="btn btn-success btn-block">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen
-										</a><br><br>
+										
+										<form method="post" action="<?php array_push($GLOBALS['producten_array'], $row["Product_id"]) ?>">
+											<input type="submit" name="toevoegen_winkelwagen" class="btn btn-success btn-block" value="Winkelwagen" /> 
+										</form>
+										<?php $_SESSION['winkelwagen'] = $GLOBALS['producten_array']; ?>
 										<p><em><?php echo $row['Beschrijving']?></em></p>
 									</div>
 								</a>
@@ -70,9 +74,11 @@
 									<div class="caption">
 										<strong><?php echo $row['Naam_product']?></strong><br>												
 										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										<a href="#" class="btn btn-success btn-block">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen
-										</a><br><br>
+										
+										<form method="post" action="<?php array_push($producten_array, $row["Product_id"]) ?>">
+											<input type="submit" name="toevoegen_winkelwagen" class="btn btn-success btn-block" value="Winkelwagen" /> 
+										</form>
+										<?php $_SESSION['winkelwagen'] = $producten_array; ?>
 										<p><em><?php echo $row['Beschrijving']?></em></p>
 									</div>
 								</a>
