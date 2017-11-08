@@ -33,156 +33,130 @@
 	
 	<!-- Catalogus -->
 	<div class="col-sm-9">
-	<?php $GLOBALS['producten_array'] = array() ?>
-		<?php
-			if ($_GET['Categorie_naam'] = "Dieren"){
-				$results2 = mysqli_query($db, $query2);
-				if($num > 0){?>
-					<div class="row">
+		<?php if ($_GET['Categorie_naam'] = "Dieren"){
+			$results2 = mysqli_query($db, $query2);
+			if($num > 0){?>
+				<div class="row">
 					<?php while($row=mysqli_fetch_assoc($results2)) {?>
 						<div class="col-xs-4">
 							<div class="thumbnail">
-								<a href="#">
+								<form action="toevoegen.php" method="post">;
 									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
 									<div class="caption">
-										<strong><?php echo $row['Naam_product']?></strong><br>												
-										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										
-										<form method="post" action="<?php array_push($GLOBALS['producten_array'], $row["Product_id"]) ?>">
-											<input type="submit" name="toevoegen_winkelwagen" class="btn btn-success btn-block" value="Winkelwagen" /> 
-										</form>
-										<?php $_SESSION['winkelwagen'] = $GLOBALS['producten_array']; ?>
+										<input type="hidden" name="prod_id" value="<?php echo $row['Product_id']?>" />
+										<strong><?php echo $row['Naam_product']?></strong><br>	
+										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br>
+										Aantal: <input type="text" name="aantal_prod" size="2" maxlength="2" value="1" /><br><br>
+										<input class="btn btn-success btn-block" type="submit" value="Winkelwagen" /> 
 										<p><em><?php echo $row['Beschrijving']?></em></p>
 									</div>
-								</a>
+								</form>
 							</div>
 						</div>
-					<?php }
-				} ?>
-					</div>
+					<?php } ?>
+				</div>
 			<?php }
-			
-			elseif ($_GET['Categorie_naam'] = "Vlaggen"){
-				$results2 = mysqli_query($db, $query2);
-				if($num > 0){?>
-					<div class="row">
+		} 
+									
+		elseif ($_GET['Categorie_naam'] = "Vlaggen"){
+			$results2 = mysqli_query($db, $query2);
+			if($num > 0){?>
+				<div class="row">
 					<?php while($row=mysqli_fetch_assoc($results2)) {?>
 						<div class="col-xs-4">
 							<div class="thumbnail">
-								<a href="#">
+								<form action="toevoegen.php" method="post">;
 									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
 									<div class="caption">
-										<strong><?php echo $row['Naam_product']?></strong><br>												
-										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										
-										<form method="post" action="<?php array_push($producten_array, $row["Product_id"]) ?>">
-											<input type="submit" name="toevoegen_winkelwagen" class="btn btn-success btn-block" value="Winkelwagen" /> 
-										</form>
-										<?php $_SESSION['winkelwagen'] = $producten_array; ?>
+										<input type="hidden" name="prod_id" value="<?php echo $row['Product_id']?>" />
+										<strong><?php echo $row['Naam_product']?></strong><br>	
+										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br>
+										Aantal: <input type="text" name="aantal_prod" size="2" maxlength="2" value="1" /><br><br>
+										<input class="btn btn-success btn-block" type="submit" value="Winkelwagen" /> 
 										<p><em><?php echo $row['Beschrijving']?></em></p>
 									</div>
-								</a>
+								</form>
 							</div>
 						</div>
-					<?php }
-				} ?>
-					</div>
+					<?php } ?>
+				</div>
 			<?php }
-			
-			elseif ($_GET['Categorie_naam'] = "Stripfiguren"){
-				$results2 = mysqli_query($db, $query2);
-				if($num > 0){?>
-					<div class="row">
-					<?php while($row=mysqli_fetch_assoc($results2)) {?>
-						<div class="col-xs-4">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
-									<div class="caption">
-										<strong><?php echo $row['Naam_product']?></strong><br>												
-										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										<a href="#" class="btn btn-success btn-block">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen
-										</a><br><br>
-										<p><em><?php echo $row['Beschrijving']?></em></p>
-									</div>
-								</a>
-							</div>
-						</div>
-					<?php }
-				} ?>
-					</div>
-			<?php }
-			
-			elseif ($_GET['Categorie_naam'] = "TV-series"){
-				$results2 = mysqli_query($db, $query2);
-				if($num > 0){?>
-					<div class="row">
-					<?php while($row=mysqli_fetch_assoc($results2)) {?>
-						<div class="col-xs-4">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
-									<div class="caption">
-										<strong><?php echo $row['Naam_product']?></strong><br>												
-										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										<a href="#" class="btn btn-success btn-block">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen
-										</a><br><br>
-										<p><em><?php echo $row['Beschrijving']?></em></p>
-									</div>
-								</a>
-							</div>
-						</div>
-					<?php }
-				} ?>
-					</div>
-			<?php }
-			
-			elseif ($_GET['Categorie_naam'] = "Automerken"){
-				$results2 = mysqli_query($db, $query2);
-				if($num > 0){?>
-					<div class="row">
-					<?php while($row=mysqli_fetch_assoc($results2)) {?>
-						<div class="col-xs-4">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
-									<div class="caption">
-										<strong><?php echo $row['Naam_product']?></strong><br>												
-										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br><br>
-										<a href="#" class="btn btn-success btn-block">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Winkelwagen
-										</a><br><br>
-										<p><em><?php echo $row['Beschrijving']?></em></p>
-									</div>
-								</a>
-							</div>
-						</div>
-					<?php }
-				} ?>
-					</div>
-			<?php }
-			
-			elseif ($_GET['Categorie_naam'] = "test") {
-				echo "test";
+		}
 
-				$query3 = "SELECT Product_id, Categorie_naam, Naam_product, Beschrijving, Gewicht, Vraagprijs FROM product p join categorie c ON p.categorie_id = c.categorie_id";
+		elseif ($_GET['Categorie_naam'] = "Stripfiguren"){
+			$results2 = mysqli_query($db, $query2);
+			if($num > 0){?>
+				<div class="row">
+					<?php while($row=mysqli_fetch_assoc($results2)) {?>
+						<div class="col-xs-4">
+							<div class="thumbnail">
+								<form action="toevoegen.php" method="post">;
+									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
+									<div class="caption">
+										<input type="hidden" name="prod_id" value="<?php echo $row['Product_id']?>" />
+										<strong><?php echo $row['Naam_product']?></strong><br>	
+										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br>
+										Aantal: <input type="text" name="aantal_prod" size="2" maxlength="2" value="1" /><br><br>
+										<input class="btn btn-success btn-block" type="submit" value="Winkelwagen" /> 
+										<p><em><?php echo $row['Beschrijving']?></em></p>
+									</div>
+								</form>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			<?php }
+		} 
+		
+		elseif ($_GET['Categorie_naam'] = "TV-series"){
+			$results2 = mysqli_query($db, $query2);
+			if($num > 0){?>
+				<div class="row">
+					<?php while($row=mysqli_fetch_assoc($results2)) {?>
+						<div class="col-xs-4">
+							<div class="thumbnail">
+								<form action="toevoegen.php" method="post">;
+									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
+									<div class="caption">
+										<input type="hidden" name="prod_id" value="<?php echo $row['Product_id']?>" />
+										<strong><?php echo $row['Naam_product']?></strong><br>	
+										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br>
+										Aantal: <input type="text" name="aantal_prod" size="2" maxlength="2" value="1" /><br><br>
+										<input class="btn btn-success btn-block" type="submit" value="Winkelwagen" /> 
+										<p><em><?php echo $row['Beschrijving']?></em></p>
+									</div>
+								</form>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			<?php }
+		}
 
-				$results2 = mysqli_query($db, $query3);
-				if($num > 0){
-					while($row=mysqli_fetch_assoc($results2)) {
-						?><td><?php 
-							echo $row['Naam_product'];
-							echo $row['Beschrijving'];
-							echo $row['Categorie_naam'];
-							echo $row['Gewicht'];
-							echo $row['Vraagprijs'];?>
-						</td>
-						<?php
-					}
-				}
-			}?>
+		elseif ($_GET['Categorie_naam'] = "Automerken"){
+			$results2 = mysqli_query($db, $query2);
+			if($num > 0){?>
+				<div class="row">
+					<?php while($row=mysqli_fetch_assoc($results2)) {?>
+						<div class="col-xs-4">
+							<div class="thumbnail">
+								<form action="toevoegen.php" method="post">;
+									<img src="fotos/<?php echo $row['Product_id']?>_1.png" alt="Afbeelding niet beschikbaar" style="width:100%">
+									<div class="caption">
+										<input type="hidden" name="prod_id" value="<?php echo $row['Product_id']?>" />
+										<strong><?php echo $row['Naam_product']?></strong><br>	
+										Vraagprijs: <?php echo "€" . $row['Vraagprijs']?><br>
+										Aantal: <input type="text" name="aantal_prod" size="2" maxlength="2" value="1" /><br><br>
+										<input class="btn btn-success btn-block" type="submit" value="Winkelwagen" /> 
+										<p><em><?php echo $row['Beschrijving']?></em></p>
+									</div>
+								</form>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			<?php }
+		} ?>
 			
 	</div>
 </div>
