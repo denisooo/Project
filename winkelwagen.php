@@ -15,9 +15,7 @@
 	<div class="col-sm-12">
 		<h1><span class="glyphicon glyphicon-shopping-cart"></span> Uw winkelwagen</h1>
 		
-		<?php print_r($_SESSION['winkelwagen']);
-
-		if(empty($_SESSION['winkelwagen']))
+		<?php if(empty($_SESSION['winkelwagen']))
 			{ ?>
 				<p>Er zijn nog geen producten in uw winkelwagen.</p>
 			<?php }

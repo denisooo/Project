@@ -19,10 +19,6 @@ footer {
     padding: 10px;
 }
 
-#home {
-	background-color: #d3d3d3;
-}
-
 /* Code om het breakpunt van de navigatiebar aan te passen, omdat deze te laat omklapte */
 @media (max-width: 1200px) {
     .navbar-header {

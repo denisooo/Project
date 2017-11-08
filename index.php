@@ -3,7 +3,7 @@
 		
 <!-- Homepagina inhoud -->
 <div class="row">
-	<div class="col-sm-12" id="home">
+	<div class="col-sm-12">
 		<h1>Welkom op de webshop 'Ria's Sleutelhangers'</h1>
 		<p>Op deze website heeft u de kans om mooie tweedehandse sleutelhangers te bestellen.</p>
 		<p>Klik bij het menu op Aanbod om de producten te bekijken</p>
