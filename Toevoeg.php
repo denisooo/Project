@@ -125,7 +125,7 @@ foreach($velden as $key=>$value) {
 }
 }
 // Het pad voor het plaatsen van de foto wordt gedefinieerd.
-$path = "uploads/";
+$path = "fotos/";
 $path = $path . basename( $_FILES['foto']['name']);
 	
 	// foto wordt geprobeerd te plaatsen in de map en er wordt direct een uitslag gemeld
