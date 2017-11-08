@@ -1,7 +1,6 @@
-<?php 
+<?php
 // header en footer includen
-include('header_menu.php'); 
-include('footer.php');
+include('header_menu.php');
 
 // query defineren voor het kunnen kiezen van categorien uit het formulier
 $query1 = "SELECT * FROM categorie";
@@ -10,29 +9,29 @@ $result1 = mysqli_query($db, $query1);
 
 ?>
 
-<!--> Begin formulier <!--> 
+<!--> Begin formulier <!-->
 <h1>Product toevoegen</h1>
 
-<form method="POST" action="toevoeg.php" enctype="multipart/form-data"> 
+<form method="POST" action="toevoeg.php" enctype="multipart/form-data">
 
 <H4 style="font-weight: bold; color: black;">
-Naam sleutelhanger:  *<br> 
+Naam sleutelhanger:  *<br>
 <input type="text" name="Naam_product" ><span class="error"></span><br><br>
-Beschrijving:<br> 
+Beschrijving:<br>
 <input type="text" name="Beschrijving" ><span class="error"></span><br><br>
 Categorie:  *
 <br><select type="text" name="Categorie_id">
-	<?php 
-	// variabele row wordt gevuld zolang er waarde in de array is. De waarde die wordt toegekend aan $row is Categorie_id maar de Categorie_naam is wat er wordt laten zien. 
+	<?php
+	// variabele row wordt gevuld zolang er waarde in de array is. De waarde die wordt toegekend aan $row is Categorie_id maar de Categorie_naam is wat er wordt laten zien.
 	// Bij het versturen van het formulier wordt dus de waarde van Categorie_id verzonden.
 	while ($row = mysqli_fetch_array($result1)){
 	echo "<option value='" .$row['Categorie_id'] . "'>" .$row['Categorie_naam'] ."</option>";
 	}
-	?>	
+	?>
 </select><br><br>
-Gewicht sleutelhanger (gram):<br> 
+Gewicht sleutelhanger (gram):<br>
 <input type="number" name="Gewicht" ><span class="error"></span><br><br>
-Vraagprijs in euro's:  *<br> 
+Vraagprijs in euro's:  *<br>
 <input type="number" name="Vraagprijs" step="0.1"><span class="error"></span><br><br>
 Upload foto:   *<br>
 <input type="file" name="foto"/><span class="error"></span><br>
@@ -40,7 +39,7 @@ Upload foto:   *<br>
 <a href="index.php"><input type="button" value="Annuleren en terugkeren"></a>
 </H4>
 </form>
-<?php 
+<?php
 // functie die de ingevoerde data filtert
 function test_input($data) {
 	// overige spaties worden eruit gehaald
@@ -58,7 +57,7 @@ function test_input($data) {
 
 //input checken op waarde
 //$Naam_product = $Beschrijving = $Categorie_id = $Gewicht = $Vraagprijs = $foto = "";
-/*$naamerror = $Beschrijvingerror = $Categorie_iderror = $Gewichterror = $Gewichterror = $Vraagprijserror = $fotoerror = ""; 
+/*$naamerror = $Beschrijvingerror = $Categorie_iderror = $Gewichterror = $Gewichterror = $Vraagprijserror = $fotoerror = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -90,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	else {
 		$Gewicht = test_input($_POST['Gewicht']);
-	}	
+	}
 	if (empty($_POST['Vraagprijs'])){
 		$Vraagprijserror = "Een Vraagprijs is verplicht";
 	}
@@ -99,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	else {
 		$Vraagprijs = test_input($_POST['Vraagprijs']);
-	}	
+	}
 	if (empty($_POST['foto'])){
 		$fotoerror = "Een foto is verplicht";
 	}
@@ -110,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	}
 	*/
-	
 
-//De in het formulier ingevulde waarden voor: Naam_product en Vraagprijs worden dmv een foreach loop gecheckt op waarde. 
+
+//De in het formulier ingevulde waarden voor: Naam_product en Vraagprijs worden dmv een foreach loop gecheckt op waarde.
 // Wanneer het formulier verzonden wordt, worden deze waarden in een array geplaatst en door de loop gehaald. De loop checkt ze op een waarde.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $velden = array('Naam_product', 'Vraagprijs');
@@ -127,12 +126,12 @@ foreach($velden as $key=>$value) {
 // Het pad voor het plaatsen van de foto wordt gedefinieerd.
 $path = "fotos/";
 $path = $path . basename( $_FILES['foto']['name']);
-	
+
 	// foto wordt geprobeerd te plaatsen in de map en er wordt direct een uitslag gemeld
 	if (move_uploaded_file($_FILES['foto']['tmp_name'], $path)){
 		echo "Foto is geupload<br>";
 		}
-		
+
 	else {
 		echo"Foto is niet geupload<br>";
 		}
@@ -157,24 +156,16 @@ if ($result){
 	}
 
 else {
-	echo "Informatie is niet toegevoegd<br>" .mysqli_error($db); 
-	}	
-	
-mysqli_close($db); 
-    
+	echo "Informatie is niet toegevoegd<br>";
+	}
+
+mysqli_close($db);
+
 
 
 
 
 ?>
- 
 
-
-
-
-
-
-
-
-
-
+<!-- Include file voor footer -->
+<?php include('footer.php'); ?>
