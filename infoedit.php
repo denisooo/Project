@@ -1,7 +1,7 @@
 <!-- Include file voor bootstrap, stylesheet etc. -->
 <?php 
 include('header_menu.php'); 
-
+	//ophalen huidige klantgegevens van huidige klant uit database
 	$query = "SELECT * FROM klant WHERE Email = '".$_SESSION['Email']."'";
 	$result = mysqli_query($db, $query);
     while($gegevens = mysqli_fetch_assoc($result)) {
@@ -16,7 +16,7 @@ include('header_menu.php');
 		$Email = $gegevens['Email'];
 		$Adres = $gegevens['Adres_id'];
 	}
-						
+	//ophalen adresgegevens van huidige klant uit database					
 	$query = "SELECT * FROM adres WHERE Adres_id = '$Adres'";
 	$result=mysqli_query($db, $query) or die(mysqli_error($db));					
 	while($adresgegevens = mysqli_fetch_assoc($result)) {
@@ -25,9 +25,10 @@ include('header_menu.php');
 		$Toevoeging = $adresgegevens['Toevoeging'];
 		$Postcode = $adresgegevens['Postcode'];
 		$Plaats = $adresgegevens['Plaats'] ;
-	}
-					
+	}				
 ?>
+<!-- Weergave invoervelden voor wijzigen klantgegevens
+huidige informatie wordt in eerste instantie als value opgegeven -->
 		<div class="row">
 	<div class="col-sm-12">
 		<h2>Gegevens wijzigen</h2>
@@ -118,9 +119,9 @@ include('header_menu.php');
 			</tr>
 				</form>
 		</table>
-
+		<!-- Include file voor bootstrap, stylesheet etc. -->
 		<?php
-							
+					//Persoonsgegevens wegschrijven naar database		
 					$query = "UPDATE klant SET
 					Voornaam = '". $_POST["Voornaam"] ."',
 					Achternaam = '". $_POST["Achternaam"] ."', 
@@ -132,13 +133,13 @@ include('header_menu.php');
 					WHERE Email = '". $_SESSION['Email'] ."'";
 					$result = mysqli_query($db, $query);
 					if($result){
-						echo "Persoonsgegevens gewijzigd";
+						echo "Persoonsgegevens gewijzigd";	//test of er gegevens zijn verzonden
 					}
 					else{
 						echo "Persoonsgegevens niet gewijzigd" .mysqli_error($db);
 					}	
 				
-				
+					//Adres gegevens wegschrijven naar database
 					$query2 = "UPDATE adres SET
 					Straatnaam = '". $_POST["Straatnaam"] ."',
 					Huisnummer = '". $_POST["Huisnummer"] ."', 
@@ -148,7 +149,7 @@ include('header_menu.php');
 					WHERE Adres_id = '". $Adres ."'";
 					$result2 = mysqli_query($db, $query2);
 					if($result2){
-						echo "<br/> Adresgegevens gewijzigd";
+						echo "<br/> Adresgegevens gewijzigd";	//dezelfde test
 					}
 					else{
 						echo "<br/> Adresgegevens niet gewijzigd" .mysqli_error($db);
