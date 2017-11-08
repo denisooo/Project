@@ -132,10 +132,6 @@ $path = $path . basename( $_FILES['foto']['name']);
 		echo "Foto is geupload<br>";
 		}
 
-	else {
-		echo"Foto is niet geupload<br>";
-		}
-
 //doorsturen van gegevens naar de database
 
 //eerst worden de variabelen gedefinieerd
@@ -155,9 +151,6 @@ if ($result){
 	echo "Informatie is toegevoegd<br>";
 	}
 
-else {
-	echo "Informatie is niet toegevoegd<br>";
-	}
 
 mysqli_close($db);
 
