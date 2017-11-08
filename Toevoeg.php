@@ -1,5 +1,5 @@
 <?php 
-// header gegevens importeren
+// header en footer includen
 include('header_menu.php'); 
 include('footer.php');
 
