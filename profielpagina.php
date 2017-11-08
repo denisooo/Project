@@ -9,6 +9,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="pull-left">
+								<!-- Buttons met links -->
 									<a href="orderhistorie.php" class="btn btn-primary">Orderhistorie</a>
 									<a href="infoedit.php" class="btn btn-primary">Gegevens Wijzigen</a>
 									<a href="pwedit.php" class="btn btn-primary">Wachtwoord wijzigen</a>
@@ -17,15 +18,15 @@
 						</div>
 						
 						<?php
-						$query = "SELECT * FROM klant WHERE Email = '".$_SESSION['Email']."'";
+						$query = "SELECT * FROM klant WHERE Email = '".$_SESSION['Email']."'"; //haalt huidige klantgegevens op van huidige klant
 						$result=mysqli_query($db, $query) or die(mysqli_error($db));
 
-						while($gegevens = mysqli_fetch_assoc($result)) {
+						while($gegevens = mysqli_fetch_assoc($result)) { //koppelt alle klant gegevens aan een variabele
 							$Voornaam = $gegevens['Voornaam'];
 							$Achternaam = $gegevens['Achternaam'];
 							$Tussenvoegsel = $gegevens['Tussenvoegsel'];
 							$Geboortedatum = $gegevens['Geboortedatum'];
-							$Postcode = $gegevens['Telefoon'] ;
+							$Telefoon = $gegevens['Telefoon'] ;
 							$Mobiel = $gegevens['Mobiel'];
 							$Aanhef = $gegevens['Aanhef'];
 							$Email = $gegevens['Email'];
@@ -33,7 +34,10 @@
 							$KlantID = $gegevens['Klant_id'];
 								}
 						?>
-						
+						<!-- 
+						Weergave voor alle klantgegevens
+						Alle klantinformatie wordt weergevens dmv de bijhorende variable
+						-->
 						<legend>Persoonsgegevens</legend>
 
 						<div class="form-group">
@@ -98,8 +102,14 @@
 								<p> <?php echo ($Mobiel)?> </p>
 							</div>
 						</div>
-						  
+						
+						<!--  
+						Hier wordt hetzelfde gedaan maar dan voor de adres gegevens
+						Reden hiervoor is omdat adres gegevens onder een andere tabel staan binnen de database
+						-->
+						
 						<?php
+						//
 						$query = "SELECT * FROM adres WHERE Adres_id = '$Adres'";
 						$result=mysqli_query($db, $query) or die(mysqli_error($db));
 						
@@ -112,7 +122,7 @@
 								}
 						?> 
 						  
-						  
+						<!-- Weergave voor adresgegevens -->  
 						  
 						<legend>Adresgegevens</legend>
 						  
@@ -157,7 +167,7 @@
 	</div>
 
 
-	
+<!-- Include footer -->	
 <?php include('footer.php'); ?>
 
 	
