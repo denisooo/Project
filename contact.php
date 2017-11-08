@@ -28,7 +28,7 @@
 <div class="row">
 	<div class="col-sm-8">
 		<div class="well">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="contactverzonden.php">
 				<fieldset>
 					
 					<legend>Contactforumulier</legend>

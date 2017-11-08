@@ -20,8 +20,6 @@ if(isset($_SESSION['winkelwagen'])){
 	unset($_SESSION['winkelwagen']);
 }
 
-unset($GLOBALS['$producten_array']);
-
 header('location: index.php');
 
 
