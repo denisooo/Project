@@ -8,6 +8,10 @@
 .jumbotron {
 	margin-bottom: 0;
 }
+/*achtergrond */
+body {
+    background-image: url("achtergrond.jpg");
+}
 
 /* Footer lay-out */
 footer {
